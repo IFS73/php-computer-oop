@@ -5,6 +5,10 @@ SET time_zone = '+00:00';
 SET foreign_key_checks = 0;
 SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
 
+DROP DATABASE IF EXISTS `php-config`;
+CREATE DATABASE `php-config` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `php-config`;
+
 DROP TABLE IF EXISTS `brands`;
 CREATE TABLE `brands` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -36,7 +40,7 @@ CREATE TABLE `cpus` (
 INSERT INTO `cpus` (`id`, `name`, `price`, `brand_id`, `clock`, `cores`) VALUES
 (1,	'j3 Dual-Core (9ème génération)',	125,	3,	2100,	2),
 (2,	'j5 Quad-Core (9ème génération)',	250,	3,	2300,	4),
-(3,	'j7 Octo-Core (9ème génération)',	500,	3,	3600,	8),
+(3,	'j7 Octo-Core (9ème génération)',	500,	3,	3600,	8);
 
 DROP TABLE IF EXISTS `gpus`;
 CREATE TABLE `gpus` (
@@ -137,6 +141,8 @@ CREATE TABLE `config` (
 INSERT INTO `config` (`id`, `name`, `cpu_id`, `gpu_id`, `hdd_id`, `ram_id`, `os_id`) VALUES
 (1,	'Le moins cher',	1,	1,	1,	1,	NULL),
 (2,	'Spécial graphiste',	1,	3,	4,	3,	1),
-(3,	'Super configuration de la mort qui tue',	1,	3,	6,	5,	2),
-*
--- 2021-07-15 12:18:08
+(8,	'Super configuration de la mort qui tue encore plus',	1,	3,	6,	5,	2),
+(10,	'Config de test pour voir si mon formulaire fonctionne',	2,	3,	3,	3,	1),
+(16,	'Bonjour les cheums',	3,	2,	4,	2,	1);
+
+-- 2021-07-22 09:42:02
